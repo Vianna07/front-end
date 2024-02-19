@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #triangulo {
+            width: 0;
+            height: 0;
+            border-left: 80px solid transparent;
+            border-right: 20px solid transparent;
+            border-bottom: 40px solid blue;
+            animation: rodar 0.8s linear infinite;
+        }
+
+        @keyframes rodar {
+            from {
+                transform: rotate(0)
+            }
+
+            to {
+                transform: rotate(360deg)
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Triangulo</h1>
+    <p>Triangulos são um pouco mais complicado</p>
+    <p>Temas que definir as bordas do elemento, o width real do elemento sera a borda</p>
+    <p>Lembre-se que os cantos das bordas de um elemento são diagonais de 45 graus</p>
+    <div id="triangulo"></div>
+</body>
+</html>
