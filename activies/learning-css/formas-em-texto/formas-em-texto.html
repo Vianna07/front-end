@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formas em texto</title>
+    <style>
+
+        hr {
+            border: 5px solid blue;
+        }
+        #quadrado {
+            float: left;
+            width: 100px;
+            height: 100px;
+            background-color: chartreuse;
+            shape-outside: inset(10px 0 10px 30px);/*| 10px na parte superior | 5px a direita | 30px na parte inferior | 10px na esquerda |*/
+        }
+
+        .rodar {
+            animation: rodar 0.2s linear infinite;
+        }
+
+        .quadrado {
+            width: 100px;
+            height: 100px;
+            background-color: brown;
+        }
+
+        @keyframes rodar {
+            from {
+                transform: rotate(0);
+            } to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .circulo {
+            float: left;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            shape-outside: circle();
+            clip-path: circle();
+        }
+
+        .circulo-cortado {
+            position: relative;
+            float: left;
+            width: 300px;
+            height: 300px;
+            right: 0;
+            top: 20px;
+            left: 120px;
+            shape-outside: circle(50% at 50%);
+            clip-path: circle(50% at 0);
+            background-color: green;
+        }
+
+        #ellipse {
+            float: left;
+            width: 150px;
+            height: 150px;
+            margin: 20px;
+            shape-outside: ellipse(20% 50%);
+            clip-path: ellipse(20% 50%);
+            background-color: cornflowerblue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Shape-outside</h1>
+    <p>
+        Essa propriedade permite que você defina uma forma para que o texto se envolva e flue ao seu redor.
+    </p>
+    <p>
+        Junto a esta propriedade temos algumas formas básicas
+    </p>
+    <p>
+        O elemento que vamos aplicar a forma com a propriedade 
+        <strong>Shape-outside</strong>
+         precisa ter a propriedade <strong>Float</strong>
+    </p>
+
+    <u>
+        <li>inset()</li>
+        <li>circle()</li>
+        <li>ellipse()</li>
+        <li>polygon()</li>
+    </u>
+
+    <h2>
+        inset()
+    </h2>
+    <p>Pode ser usado para criar um retângulo/quadrado com um deslocamento opcional para o texto que o envolver.</p>
+    <p class="rodar">Pode ser usado para criar um retângulo/quadrado com um deslocamento opcional para o texto que o envolver.</p>
+    <div id="quadrado"></div>
+    
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat enim iste quas aliquam dolorem recusandae sit! Aut nostrum at inventore vitae veritatis, officia porro delectus consectetur optio ex impedit repellendus?
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias ducimus laudantium dignissimos, ut placeat libero eligendi dolores. Ea blanditiis iusto quia ratione. Dolor sapiente qui nam nemo possimus! Beatae, vel?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, dolore. Eos, fugiat blanditiis esse rem impedit non adipisci ullam quas! Corrupti in suscipit quam incidunt, possimus quia non rem necessitatibus.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore possimus incidunt ab deleniti eum placeat et quae, earum debitis! Qui cumque ratione consequuntur fugiat modi in? Voluptatem itaque ipsum aperiam.
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam pariatur aperiam quod error incidunt perferendis qui odio, accusantium voluptatum ab, consectetur beatae possimus praesentium laborum cum! Dolorum dolor fuga sit!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci voluptates harum nobis perferendis sint nostrum temporibus sed corrupti necessitatibus tempora iste fugiat eaque recusandae, repellendus fuga quos omnis quibusdam ad!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, aliquam voluptate impedit rem nemo corporis enim dicta consectetur blanditiis dolore architecto et mollitia ipsum similique ullam natus ea repudiandae veritatis.
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit dolorum temporibus quidem dolorem quasi, quam officia laborum ratione, iure, delectus nihil neque dolore tenetur accusamus doloremque. Sequi nemo suscipit incidunt?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos laboriosam tenetur cupiditate voluptates! Atque reiciendis minus enim id iure et ab, dolor molestiae, alias expedita nam beatae voluptates, aliquid autem!
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error deleniti vel necessitatibus corporis, dicta asperiores maxime nostrum iure fugiat odit! Sapiente voluptatum pariatur ad et qui, itaque numquam exercitationem enim?</p>
+
+    <div class="quadrado rodar"></div>
+
+    <br><br><br><br>
+    <hr>
+
+    <h2>circle()</h2>
+    <p>O círculo é criado usando a propriedade <strong>shape-outside</strong></p>
+    <p>Pode ser aplicado um <strong>clip-path</strong> com a propriedade correspondente para que o circulo apareça </p>
+    <p>A propriedade <strong>clip-path</strong>pode receber a mesma propriedade <strong>shape-outside</strong> para dar a ela a forma padrão</p>
+    <strong>circle()</strong>
+
+    <div class="circulo"></div>
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint atque eum inventore consequatur, eaque quae provident, omnis tempore doloribus sequi maiores vel aliquid nam beatae facere quisquam debitis, pariatur possimus.
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, accusamus similique harum impedit incidunt odio quia laboriosam veniam dicta exercitationem est tempora quasi et repellendus, at eius, ducimus deserunt tenetur?
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. At, iusto et ad nemo praesentium ipsa officia aliquid qui laboriosam, ipsam excepturi. Alias reiciendis ad soluta assumenda in, at quos ab!
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae, nostrum. Minus nobis animi voluptatum tempora quasi illo quod voluptates quis, illum sapiente dolor perferendis assumenda aliquam cum placeat odio. Fugit?
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam possimus quibusdam suscipit quo nesciunt, fuga ex voluptatum exercitationem quis, officiis, soluta deleniti autem tempore necessitatibus enim excepturi consectetur blanditiis atque.
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur quasi nobis sed doloribus! Eum ipsa laboriosam perferendis magni ullam voluptate praesentium illum consequatur, sint eligendi in fugit architecto dolorem assumenda.
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est vitae minima commodi illo repudiandae dolor corporis esse repellat exercitationem fugit obcaecati rerum inventore illum distinctio, quas labore vero et accusantium.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi impedit nesciunt harum consequatur cupiditate tempora itaque necessitatibus iusto reprehenderit aperiam, maiores odit, quas vero praesentium laudantium dolorem deleniti quam maxime.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos non cumque ipsum ducimus, impedit commodi aliquid nemo labore velit minima consequatur sapiente repellendus. Molestiae quam esse iure voluptas tenetur ut.
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis possimus, obcaecati exercitationem ipsum laborum iusto non corrupti quam illo distinctio consequatur at, maxime reiciendis alias perspiciatis ullam. Nisi, laborum repudiandae?
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, perferendis blanditiis in debitis iusto harum eos saepe deserunt voluptatibus minima quaerat, nisi maiores nostrum nobis facilis. Accusamus, maxime ut. Blanditiis.
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi, unde eius voluptates alias esse facere maiores deserunt, dolorem sapiente itaque quas! Nisi repudiandae qui fugiat magnam eum aperiam, consequuntur maiores!
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit nemo nulla earum minima voluptatum maxime obcaecati, ea quod libero ullam, possimus molestias pariatur vel odit corporis quisquam dolore facere? Fugiat.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus unde nam dignissimos deleniti repudiandae rerum, perspiciatis rem porro dicta quos laboriosam esse iste sapiente tenetur? Deserunt amet odio nam iure!
+
+    <div class="circulo-cortado"></div>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit animi, obcaecati aliquid qui iusto perspiciatis placeat laborum eveniet illum explicabo magni officiis vitae eius possimus repudiandae tenetur, corporis laboriosam! Corrupti!
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae ullam corrupti laudantium recusandae obcaecati velit nostrum voluptatibus nobis, qui facere dolore nesciunt nemo similique reiciendis sit. Blanditiis quaerat adipisci optio.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Et debitis culpa architecto quam, dolorum nostrum maiores fugiat? Repudiandae minima, quidem voluptate qui repellat voluptas tempora velit, culpa saepe dolorum impedit.
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat laborum reprehenderit neque illo quam aspernatur esse enim nemo soluta. Consectetur iusto illo fugit voluptatum maiores vitae esse assumenda explicabo provident!
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore nulla praesentium, dicta quis perferendis molestias quidem quo commodi inventore doloremque est debitis esse in consequuntur ducimus ea accusantium nam velit.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate impedit aspernatur odio laboriosam vel aliquam voluptatem ducimus culpa repellat aut molestiae consequuntur deleniti assumenda, necessitatibus sunt quas nemo atque delectus.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga aliquid harum ducimus similique. Ad est explicabo at suscipit cupiditate doloribus voluptatem quas odio culpa? Ullam quidem quasi omnis amet accusantium?
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae quos, dicta tempora excepturi expedita voluptates reprehenderit sint nobis laboriosam esse! Necessitatibus molestias inventore praesentium quo ab provident quidem quam repudiandae.
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia exercitationem voluptates, perspiciatis illo assumenda provident placeat sunt explicabo. Dolorem non reiciendis ea fuga asperiores nulla quas laborum perspiciatis cumque dolores!
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi expedita rem quaerat culpa quam sit reprehenderit. Tenetur harum cupiditate quibusdam, delectus cumque animi illum ducimus sunt pariatur possimus sint dignissimos!
+
+    <br><br><br><br><br><br><br><br><br>
+    <hr>
+
+    <h2>ellipse()</h2>
+    <p>Funcionam da mesma forma que os círculos, exceto pelo fato de criar uma oval</p>
+    <p>Pode definir os valores x e y assim <strong>ellipse(25px 50px)</strong></p>
+
+    <div id="ellipse"></div>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione veritatis molestiae alias eos, sunt placeat impedit obcaecati fugiat quos sit quis maxime dolores rerum eius voluptatem aperiam cumque, deleniti velit.
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit optio numquam eum ut, pariatur amet architecto! Iusto deserunt laborum asperiores alias porro soluta nemo eius minus consequatur, nesciunt necessitatibus repellendus.
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo animi facere voluptatum aliquid numquam minima reprehenderit saepe facilis! Laborum repellat pariatur veritatis rem inventore facere, minus odit officiis aliquam sed.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate reprehenderit perspiciatis rerum sit reiciendis natus, minus sapiente est repellat accusantium tempore sint quis eos, animi hic, quasi dignissimos non tenetur!
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere quas id aperiam nobis commodi repudiandae delectus dicta at modi reiciendis quos odit iusto, expedita eum officiis illum consectetur maiores iste.
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi voluptas cumque, aspernatur quos numquam est sint blanditiis, a dolorum inventore quod dignissimos eius cum beatae possimus pariatur, ducimus perferendis sed.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, fugiat. Ratione beatae fuga incidunt inventore culpa nulla reprehenderit, facere eius itaque veniam pariatur, distinctio, velit minus est earum exercitationem in!
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos facilis amet porro iste consectetur cum, animi dolorem necessitatibus asperiores quam eligendi nulla nesciunt optio quod laboriosam eius rem. Ratione, aut.
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio, mollitia dignissimos quae quaerat harum laudantium rem quos illo sapiente eaque nemo, iste similique adipisci aperiam itaque ipsum, perspiciatis impedit possimus.
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem ea soluta sunt unde, architecto beatae blanditiis, non magnam perspiciatis explicabo laborum debitis, iusto temporibus minus minima consequuntur veniam modi officiis?
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam nihil ullam libero velit voluptas amet quos maxime sunt corporis totam accusantium saepe nesciunt necessitatibus porro, ad repellat repudiandae. Et, perferendis!
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, numquam omnis laboriosam veritatis repudiandae officiis sunt vel quasi consequuntur accusamus! Quis tempora cumque accusantium, iure aspernatur pariatur aliquam blanditiis ipsam!
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis laudantium eveniet quaerat explicabo modi, ab qui asperiores reiciendis molestias aspernatur rerum nisi fuga iusto consectetur libero impedit eius laboriosam nihil?
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi fugit voluptatem rem veniam placeat, quibusdam nam dignissimos tempore voluptate maiores animi dolorum impedit vero? Culpa veniam blanditiis voluptas mollitia excepturi!
+
+</body>
+</html>
