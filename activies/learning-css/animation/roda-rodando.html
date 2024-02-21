@@ -8,7 +8,7 @@
     <style>
         body {
             display: flex;
-            justify-content: center;
+            /* justify-content: center; */
             align-items: center;
             margin: 0;
             padding: 0;
@@ -20,7 +20,7 @@
             position: relative;
             width: 100px;
             height: 100px;
-            animation: girar-roda 5s linear infinite;
+            animation: girar-roda 12s linear infinite;
         }
 
         .pneu {
@@ -51,10 +51,12 @@
         }
 
         @keyframes girar-roda {
-            from {
-                transform: rotate(0);
-            } to {
-                transform: rotate(360deg);
+            0% {
+                transform: translateX(0) rotate(0);
+            } 50% {
+                transform: translateX(100vw) rotate(360deg);
+            } 100% {
+                transform: translateX(0);
             }
         }
     </style>
