@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circulo pulsante</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        p {
+            color: aliceblue;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            font-size: medium;
+            font-weight: 700;
+            z-index: 1;
+        }
+
+        .circulo {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            animation: pulsar 3s linear infinite;
+        }
+
+
+
+        @keyframes pulsar {
+            0% {
+                transform: scale(1);
+            } 50% {
+                transform: scale(2);
+                border-radius: 150%;
+            } 100% {
+                transform: scale(1);
+
+            }
+        }
+    </style>
+</head>
+<body>
+    <p>Criar um circulo pulsante</p>
+    <div class="circulo"></div>
+</body>
+</html>

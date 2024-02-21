@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Arima+Madurai&display=swap');
+
+        * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        }
+
+        html,
+        body {
+        height: 100vh;
+        }
+
+        body {
+        background-color: #C1D0D0;
+        font-family: 'Miriam Libre', sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        }
+
+        .heart_beating {
+        position: relative;
+        }
+
+        .heart {
+        position: relative;
+        width: 120px;
+        height: 120px;
+        background: #fa3c3c;
+        transform: rotate(45deg);
+        animation: beat 2s ease-out infinite;
+        }
+
+        .heart::before, .heart::after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: #fa3c3c;
+        position: absolute;
+        }
+
+        .heart::before {
+        top: -50%;
+        }
+
+        .heart::after {
+        left: -50%;
+        }
+
+        .shine {
+            width: 40%;
+            height: 40%;
+            position: absolute;
+            left: 50%;
+            bottom: 96%;
+            border-radius: 100% 0%;
+            border-left: 2px solid #FFEAA5;
+            transform: rotate(90deg);
+        }
+
+        .shadow {  
+        width: 140%;
+        height: 40%;
+        background: #4A676A;
+        opacity: .2;
+        border-radius: 100%;
+        position: absolute;
+        bottom: -100%;
+        right: -20%;
+        animation: beat_shadow 2s ease-out infinite;
+        }
+
+        @keyframes beat {
+        0%, 40%, 70%, 100%{
+            transform: scale(1) rotate(45deg);
+        }
+        20%  {
+            transform: scale(1.4) rotate(45deg);
+        }
+        50%, 80% {
+            transform: scale(1.2) rotate(45deg);
+        }
+        }
+
+        @keyframes beat_shadow {
+        0%, 40%, 70%, 100%{
+            transform: scale(1);
+        }
+        20%  {
+            transform: scale(1.4);
+        }
+        50%, 80% {
+            transform: scale(1.2);
+        }
+        }
+    </style>
+</head>
+<body>
+    <div class="heart_beating">
+        <div class="heart">
+        <span class="shine"></span>
+        </div>
+        <span class="shadow"></span>
+    </div>
+</body>
+</html>

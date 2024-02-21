@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caixa saltando</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: end;
+            min-height: 100vh;
+            /* min-width: 100vw; */
+        }
+        .caixa-saltando {
+            width: 200px;
+            height: 100px;
+            background-color: coral;
+            position: relative;
+            animation: saltar 1s linear infinite;
+        }
+
+        @keyframes saltar {
+            0%, 100% {
+                top: 0;
+            } 50% {
+                top: -90px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="caixa-saltando">
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texto piscando</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: silver;
+        }
+
+        p {
+            color: #aeeeac;
+            font-size: 130px;
+            animation: piscar 3s linear infinite;
+        }
+
+        @keyframes piscar {
+            0%, 100% {
+                opacity: 1;
+            } 50% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="texto-piscando">
+        <p>Oque eu posso escrever aqui?</p>
+    </div>
+</body>
+</html>
