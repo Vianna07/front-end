@@ -15,7 +15,7 @@ body {
 
 header {
     position: relative;
-    background: url('./imgs/1.jpg') no-repeat;
+    background: url('../imgs/1.jpg') no-repeat;
     height: auto;
     width: 100%;
     background-size: cover;
