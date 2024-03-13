@@ -8,7 +8,7 @@
 body {
     min-height: 100vh;
     display: grid;
-    grid-template-rows: 82vh 13vh 5vh;
+    grid-template-rows: 80vh 15vh 5vh;
 }
 
 .container {
@@ -17,4 +17,27 @@ body {
     align-items: center;
     background-color: aliceblue;
     gap: 10px;
+
+    & img {
+        max-height: 100%;
+        max-width: 100%;
+        height: auto;
+        width: auto;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+}
+
+#imagem-grande-container {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & img {
+        max-height: 100%;
+        max-width: 100%;
+        height: auto;
+        width: auto;
+        box-shadow: 6px 6px 18px 0px #5dcbff;    }
 }
