@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activie - Element()</title>
+    <style>
+        html, body {
+            height: 100%;
+        }
+        * {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body onclick="minhaFuncao()">
+    <h1>
+        O Elemento Activie: 
+    </h1>
+    <h2>
+        A Propriedade do Elemento Ativo
+    </h2>
+    <input type="text" value="Um campo de texto">
+    <button>Um Botão</button>
+    <p>
+        Clique em qualquer lugar do documento para ativar o elemento
+    </p>
+    <p id="demo"></p>
+
+    <script>
+        function minhaFuncao() {
+            const elemento = document.activeElement.tagName
+            console.log(elemento);
+            document.getElementById("demo").innerHTML = elemento
+        }
+    </script>
+</body>
+</html>

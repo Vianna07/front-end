@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getElementByCLassName</title>
+    <style>
+        html, body {
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="demo">
+        Classe-1
+    </h1>
+    <h1 class="demo">
+        Classe-2
+    </h1>
+    <h1 class="demo">
+        Classe-3
+    </h1>
+    <h1 class="demo">
+        Classe-4
+    </h1>
+    <h2>
+        Método getElementByClassName
+    </h2>
+
+    <script>
+        function mudarCor() {
+            const classList = document.getElementsByClassName('demo')
+            console.log(
+                "getElementByClassName: \n", classList, "\ntype: \n", typeof classList, "\n\n\n",  
+                "Array.from(getElementByClassName): \n", (Array.from(classList)), "\ntype: \n", typeof (Array.from(classList)),"\n\n\n",
+                "querySelectorAll: \n", document.querySelectorAll('.demo'), "\ntype: \n", typeof document.querySelectorAll('.demo')
+            );
+
+            setTimeout(() => {
+                Array.from(classList).forEach(element => {
+                    element.style.color = "white"
+                    element.style.backgroundColor = "black"
+                });
+            }, 4000)
+        }
+
+        mudarCor()
+    </script>
+</body>
+</html>
