@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>querySelector</title>
+    <style>
+        html, body {
+            height: 100%;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.9rem 1.8rem;
+            font-size: 16px;
+            font-weight: 700;
+            color: rgb(0, 0, 0);
+            border: 3px solid rgb(187, 71, 255);
+            cursor: pointer;
+            position: relative;
+            background-color: transparent;
+            text-decoration: none;
+            overflow: hidden;
+            z-index: 1;
+            font-family: inherit;
+            font-weight: 700;
+        }
+
+        .btn::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgb(187, 71, 255);
+            transform: translateX(-100%);
+            transition: all 0.3s;
+            z-index: -1;
+        }
+
+        .btn:hover::before {
+            transform: translateX(0);
+        }
+
+        .number-control {
+            display: flex;
+            align-items: center;
+        }
+
+        .number-left::before,
+        .number-right::after {
+            content: attr(data-content);
+            background-color: #333333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid black;
+            width: 20px;
+            color: white;
+            transition: background-color 0.3s;
+            cursor: pointer;
+        }
+
+        .number-left::before {
+            content: "-";
+        }
+
+        .number-right::after {
+            content: "+";
+        }
+
+        .number-quantity {
+            padding: 0.25rem;
+            border: 0;
+            width: 50px;
+            -moz-appearance: textfield;
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+        }
+
+        .number-left:hover::before,
+        .number-right:hover::after {
+            background-color: #666666;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>O método querySelector()</h1>
+    <p class="exemplo">Eu sou um parágrafo</p>
+    <p class="exemplo">Eu sou um parágrafo</p>  
+    <p class="exemplo">Eu sou um parágrafo</p>
+    <p class="exemplo">Eu sou um parágrafo</p>
+    <p class="exemplo">Eu sou um parágrafo</p>  
+    <p class="exemplo">Eu sou um parágrafo</p>  
+    <p class="exemplo">Eu sou um parágrafo</p>
+    <p class="exemplo">Eu sou um parágrafo</p>  
+    <p class="exemplo">Eu sou um parágrafo</p>  
+    <div class="nome">
+       <h1>Meu nome </h1>
+    </div>
+    <div>
+        <button class="btn aumentar">Aumentar a velocidade</button>
+        <button class="btn diminuir">Diminuir a velocidade</button>
+    </div>
+
+    <div class="number-control">
+        <div class="number-left"></div>
+        <input type="number" name="number" class="number-quantity">
+        <div class="number-right"></div>
+    </div>
+      
+    <script>
+        let deg = 0
+        let incrementadorDeg = 20
+
+        const todasAsClassesExemplo = document.querySelectorAll('.exemplo')
+
+        todasAsClassesExemplo.forEach(element => {
+            element.style.backgroundColor = "red"
+        });
+
+        const primeiraClasseExemplo = document.querySelector('.exemplo')
+        primeiraClasseExemplo.style.backgroundColor = "purple"
+        primeiraClasseExemplo.style.color = "white"
+        primeiraClasseExemplo.style.fontWeight = 700
+
+        function rodar(elemento) {
+            setTimeout(() => {
+                deg = (deg + incrementadorDeg)%360
+                elemento.style.transform = `rotate(${deg}deg)`
+    
+                rodar(elemento)
+            }, 50)
+        }
+
+        const div = document.querySelector('.nome')
+        div.style.backgroundColor = "black"
+        div.style.color = "white"
+        rodar(div)
+
+        document.querySelector('.aumentar').addEventListener('click', () => {
+            incrementadorDeg = (incrementadorDeg + 20)%360
+        })
+
+        document.querySelector('.diminuir').addEventListener('click', () => {
+            if (incrementadorDeg <= 0) {
+                incrementadorDeg = 0
+            } else {
+                incrementadorDeg = (incrementadorDeg - 20)%360
+            }
+        })
+    </script>
+</body>
+</html>

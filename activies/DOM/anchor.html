@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>querySelector</title>
+    <style>
+        html, body {
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <a href="">Tutorial Html</a>
+    <a href="">Tutorial CSS</a>
+    <a href="">XML Tutorial</a>
+
+    <p id="demo"></p>
+
+    <script>
+        let conteudo = document.querySelector('a').innerHTML
+        console.log(conteudo);
+        document.getElementById("demo").innerHTML = conteudo
+    </script>
+</body>
+</html>
