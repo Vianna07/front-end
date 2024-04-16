@@ -1,5 +1,10 @@
+const url = 'https://rickandmortyapi.com/api/character'
+const container = document.querySelector('#container')
+const card = document.querySelector('#card')
+
+
 async function getCharacters() {
-    return await fetch('https://rickandmortyapi.com/api/character')
+    return await fetch(url, {method: 'GET'})
         .then((response => 
             response.json()
         ))
@@ -12,27 +17,27 @@ async function getCharacters() {
     })
 }
 
-function createCards(characters) {
-    Array.from(characters.results).forEach(character => {
+function showData(characters) {
+    characters.results.forEach(character => {        
+        const p = document.createElement('p')
+        p.id = character.id
+        p.innerHTML = character.name
+        p.addEventListener('click', () => {
+            card.innerHTML = `<h3>${character.name}</h3>`
+            card.innerHTML += `<img src="${character.image}" alt="img">`
+            card.innerHTML += `<h5>Status: ${character.status}</h5>`
+            card.innerHTML += `<h5>Espécie: ${character.especies}</h5>`
+            card.innerHTML += `<h5>Origem: ${character.origin.name}</h5>`
+        })
+        container.appendChild(p)
+
         console.log(character);
-        const div = document.createElement('div')
-        div.classList.add('card')
-
-        const img = document.createElement('img')
-        img.src = character.image
-
-        
-
-        div.appendChild(img)
-
-        document.body.appendChild(div)
     });
 }
 
 async function App() {
     const characters = await getCharacters();
-    
-    createCards(characters)
+    showData(characters)    
 }
 
 App()
